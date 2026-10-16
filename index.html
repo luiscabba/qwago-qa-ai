@@ -20,7 +20,6 @@ a{color:#5536c4}a:hover{color:#3f24a0}
 .spin{animation:spin 16s linear infinite;transform-style:preserve-3d}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
 @keyframes spin{from{transform:rotateX(-10deg) rotateY(0deg)}to{transform:rotateX(-10deg) rotateY(360deg)}}
-@media (max-width:900px){.orbit{display:none}}
 .shade{animation:shade 6s ease-in-out infinite}
 @keyframes shade{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(0.8);opacity:0.55}}
 @media (prefers-reduced-motion:reduce){.float,.spin,.shade{animation:none}}
@@ -66,6 +65,33 @@ a{color:#5536c4}a:hover{color:#3f24a0}
 .rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+@media (min-width:701px) and (max-width:900px){.orbit{display:none!important}}
+@media (max-width:700px){
+nav.nav{border-radius:24px!important;padding:8px 8px 8px 16px!important;flex-wrap:nowrap!important;gap:10px!important;margin-top:12px!important}
+nav.nav img{height:20px!important}
+nav.nav > div{gap:10px!important;flex-wrap:nowrap!important}
+nav.nav > div > span{white-space:nowrap;font-size:15px!important}
+nav.nav .navl{display:none}
+nav.nav .btn{min-height:40px;padding:0 16px;font-size:14px;white-space:nowrap}
+.orbit{position:relative!important;right:auto!important;top:auto!important;width:220px!important;height:236px!important;align-self:center;margin:-36px 0 -12px;display:flex!important}
+.orbit canvas{width:220px!important;height:220px!important}
+section[style*="padding: 96px"]{padding-top:48px!important}
+.hwrap{display:flex!important;flex-direction:column;align-items:stretch;gap:12px;padding-top:16px!important;padding-bottom:72px!important}
+.hchip{position:static!important;width:auto!important;translate:none!important;animation:none!important}
+.stack{height:auto!important;display:flex;flex-direction:column;gap:12px}
+.stack > div{position:relative!important;left:auto!important;right:auto!important;top:auto!important;opacity:1!important}
+.nums{grid-template-columns:repeat(2,minmax(0,1fr))!important;padding:24px!important;gap:24px!important}
+.nums strong{font-size:38px!important}
+section[style*="padding-bottom: 140px"]{padding-bottom:88px!important}
+.glass[style*="padding: 40px"],.glass[style*="padding: 32px"]{padding:22px!important}
+.cta{padding:40px 22px!important;border-radius:28px!important}
+.chart text{font-size:34px}
+.btn{min-height:46px}
+[style*="grid-column: span 2"]{grid-column:auto!important}
+}
+@media (max-width:440px){nav.nav > div > img,nav.nav > div > span[style*="width: 1px"]{display:none!important}}
+@media (max-width:700px){.hwrap > .glass{box-sizing:border-box;width:100%!important}}
 </style>
 <style>html{scroll-behavior:smooth}img{max-width:100%}@media (max-width:700px){[style*="grid-column: span 2"]{grid-column:auto!important}}</style>
 </head>
@@ -81,7 +107,7 @@ a{color:#5536c4}a:hover{color:#3f24a0}
 <div style="position: relative; max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column">
 
 
-<nav class="glass" style="margin-top: 24px; border-radius: 999px; padding: 10px 10px 10px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<nav class="glass nav" style="margin-top: 24px; border-radius: 999px; padding: 10px 10px 10px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
 <div style="display: flex; align-items: center; gap: 18px">
 <img src="assets/spmadrid.png" alt="S.P. Madrid" style="height: 28px; width: auto; display: block">
 <span aria-hidden="true" style="width: 1px; height: 24px; background: rgba(28,24,48,0.15)"></span>
@@ -110,26 +136,24 @@ a{color:#5536c4}a:hover{color:#3f24a0}
 </div>
 </section>
 
-<div style="position: relative; padding-bottom: 120px">
-<div data-parallax style="transform-origin: center top; will-change: transform">
+<div class="hwrap" style="position: relative; padding-bottom: 120px">
 <div class="glass" style="border-radius: 32px; padding: 14px">
 <img src="assets/qa-dashboard.png" alt="QA AI dashboard" style="width: 100%; height: auto; display: block; border-radius: 20px">
 </div>
-</div>
-<div class="glass bob" style="position: absolute; left: -12px; bottom: 80px; border-radius: 20px; padding: 16px 20px; display: flex; align-items: center; gap: 14px">
+<div class="glass bob hchip" style="position: absolute; left: -12px; bottom: 80px; border-radius: 20px; padding: 16px 20px; display: flex; align-items: center; gap: 14px">
 <span style="width: 40px; height: 40px; border-radius: 12px; background: #0f8a7e; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"></path></svg></span>
 <span style="display: flex; flex-direction: column"><strong style="font-family: 'Inter Tight', sans-serif; font-size: 22px">61,482 of 61,482</strong><span style="font-size: 14px; color: #4a4560">calls checked</span></span>
 </div>
-<div class="glass bob2" style="position: absolute; right: -12px; top: 60px; border-radius: 20px; padding: 16px 20px; display: flex; align-items: center; gap: 14px">
+<div class="glass bob2 hchip" style="position: absolute; right: -12px; top: 60px; border-radius: 20px; padding: 16px 20px; display: flex; align-items: center; gap: 14px">
 <span class="ping" style="width: 12px; height: 12px; border-radius: 50%; background: #c42b30"></span>
 <span style="display: flex; flex-direction: column"><strong style="font-size: 16px">Critical breach</strong><span style="font-size: 14px; color: #4a4560">Team leader alerted</span></span>
 </div>
 </div>
 
 
-<section style="padding: 40px 0 120px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 56px; align-items: center">
+<section style="padding: 40px 0 120px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 56px; align-items: center">
 <h2 style="margin: 0; font-family: 'Inter Tight', sans-serif; font-weight: 800; font-size: clamp(36px, 4.5vw, 60px); line-height: 1; letter-spacing: -0.035em">[130K] calls a month.<br><span style="color: #4a4560">[4] people to check them.</span></h2>
-<div class="glass" style="border-radius: 28px; padding: 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 28px">
+<div class="glass" style="border-radius: 28px; padding: 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 28px">
 <div style="display: flex; flex-direction: column; gap: 14px">
 <div style="display: flex; justify-content: space-between; align-items: baseline; font-weight: 600"><span>Manual sampling</span><span style="color: #c42b30; font-family: 'Inter Tight', sans-serif; font-size: 22px">[2%]</span></div>
 <div aria-hidden="true" style="display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 5px">
@@ -358,7 +382,7 @@ a{color:#5536c4}a:hover{color:#3f24a0}
 
 <section id="how" style="padding-bottom: 140px; display: flex; flex-direction: column; gap: 48px">
 <h2 style="margin: 0; font-family: 'Inter Tight', sans-serif; font-weight: 800; font-size: clamp(36px, 4.5vw, 56px); letter-spacing: -0.035em; text-align: center">How it works</h2>
-<div style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px">
+<div style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 20px">
 <div aria-hidden="true" style="position: absolute; left: 8%; right: 8%; top: 52px; height: 2px; background: repeating-linear-gradient(90deg, #6d4fd8 0 10px, transparent 10px 20px); opacity: 0.4" class="flow"></div>
 <div class="glass" style="position: relative; border-radius: 28px; padding: 28px; display: flex; flex-direction: column; gap: 20px">
 <span style="width: 48px; height: 48px; border-radius: 16px; background: #ffffff; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(60,40,140,0.12)"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6d4fd8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"></path></svg></span>
@@ -384,12 +408,12 @@ a{color:#5536c4}a:hover{color:#3f24a0}
 </section>
 
 
-<section id="flags" style="padding-bottom: 140px; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 56px; align-items: center">
+<section id="flags" style="padding-bottom: 140px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 56px; align-items: center">
 <div style="display: flex; flex-direction: column; gap: 20px">
 <h2 style="margin: 0; font-family: 'Inter Tight', sans-serif; font-weight: 800; font-size: clamp(36px, 4.5vw, 56px); line-height: 1; letter-spacing: -0.035em">Most serious first.</h2>
 <p style="margin: 0; font-size: 19px; line-height: 1.5; color: #4a4560; max-width: 420px">Shows the exact sentence that broke the rule.</p>
 </div>
-<div style="position: relative; height: 420px">
+<div class="stack" style="position: relative; height: 420px">
 <div class="glass" style="position: absolute; left: 48px; right: 0; top: 0; border-radius: 24px; padding: 22px 26px; display: flex; flex-direction: column; gap: 10px; opacity: 0.75">
 <div style="display: flex; justify-content: space-between; align-items: center"><span style="padding: 5px 12px; border-radius: 999px; background: rgba(28,24,48,0.08); font-size: 13px; font-weight: 600; color: #4a4560">Minor</span><span style="font-size: 14px; color: #4a4560">Tracked as a trend</span></div>
 <strong style="font-size: 18px">[Missed negotiation step]</strong>
@@ -407,7 +431,7 @@ a{color:#5536c4}a:hover{color:#3f24a0}
 </section>
 
 
-<section style="padding-bottom: 140px; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 56px; align-items: center">
+<section style="padding-bottom: 140px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 56px; align-items: center">
 <div class="glass" style="border-radius: 32px; padding: 14px; order: 1">
 <img src="assets/qa-team-leader.png" alt="QA AI team leader screen" style="width: 100%; height: auto; display: block; border-radius: 20px">
 </div>
@@ -423,7 +447,7 @@ a{color:#5536c4}a:hover{color:#3f24a0}
 
 
 <section style="padding-bottom: 140px">
-<div class="glass" style="border-radius: 36px; padding: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px">
+<div class="glass nums" style="border-radius: 36px; padding: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 32px">
 <div style="display: flex; flex-direction: column; gap: 6px"><strong style="font-family: 'Inter Tight', sans-serif; font-size: 56px; letter-spacing: -0.04em; color: #5536c4" data-count="100" data-suffix="%">100%</strong><span style="color: #4a4560">of calls checked</span></div>
 <div style="display: flex; flex-direction: column; gap: 6px"><strong style="font-family: 'Inter Tight', sans-serif; font-size: 56px; letter-spacing: -0.04em">[130K]</strong><span style="color: #4a4560">calls a month</span></div>
 <div style="display: flex; flex-direction: column; gap: 6px"><strong style="font-family: 'Inter Tight', sans-serif; font-size: 56px; letter-spacing: -0.04em">[16]</strong><span style="color: #4a4560">management centers</span></div>
@@ -434,7 +458,7 @@ a{color:#5536c4}a:hover{color:#3f24a0}
 
 <section id="banks" style="padding-bottom: 140px; display: flex; flex-direction: column; gap: 40px">
 <h2 style="margin: 0; font-family: 'Inter Tight', sans-serif; font-weight: 800; font-size: clamp(36px, 4.5vw, 56px); letter-spacing: -0.035em">Built for banks.</h2>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 20px">
 <div class="glass" style="border-radius: 28px; padding: 32px; display: flex; flex-direction: column; gap: 14px; min-height: 200px"><svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#5536c4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 018 0v3"></path></svg><strong style="font-family: 'Inter Tight', sans-serif; font-size: 24px">Processed in-house</strong><span style="color: #4a4560; line-height: 1.45">Calls stay on S.P. Madrid's own systems.</span></div>
 <div class="glass" style="border-radius: 28px; padding: 32px; display: flex; flex-direction: column; gap: 14px; min-height: 200px"><svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#5536c4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16M4 12h16M4 19h10"></path></svg><strong style="font-family: 'Inter Tight', sans-serif; font-size: 24px">Your rules, per campaign</strong><span style="color: #4a4560; line-height: 1.45">Each bank's requirements set up as checks.</span></div>
 <div class="glass" style="border-radius: 28px; padding: 32px; display: flex; flex-direction: column; gap: 14px; min-height: 200px"><svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#5536c4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path></svg><strong style="font-family: 'Inter Tight', sans-serif; font-size: 24px">Penalties avoided</strong><span style="color: #4a4560; line-height: 1.45">Incidents caught before they cost you.</span></div>
@@ -443,7 +467,7 @@ a{color:#5536c4}a:hover{color:#3f24a0}
 
 
 <section id="book" style="padding-bottom: 80px">
-<div class="glass" style="position: relative; overflow: hidden; border-radius: 40px; padding: 96px 32px; display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center; background: rgba(255,255,255,0.4)">
+<div class="glass cta" style="position: relative; overflow: hidden; border-radius: 40px; padding: 96px 32px; display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center; background: rgba(255,255,255,0.4)">
 <div class="orb" aria-hidden="true" style="position: absolute; left: 15%; top: -40%; width: 60%; height: 120%; border-radius: 50%; background: #6d4fd8; opacity: 0.35; filter: blur(100px)"></div>
 <svg viewBox="33 28 92 104" width="60" height="68" aria-hidden="true" style="position: relative"><path d="M37 31 L54 39 Q79 33 104 39 L121 31 L122 50 Q125 80 118 101 Q105 129 79 130 Q53 129 40 101 Q33 80 36 50 Z" fill="#4a2bb0"></path><circle cx="58" cy="66" r="11" fill="none" stroke="#ffffff" stroke-width="4.4"></circle><circle cx="100" cy="66" r="11" fill="none" stroke="#ffffff" stroke-width="4.4"></circle><path d="M75 75 L83 75 L79 82 Z" fill="#ffffff"></path><path d="M88 106 L88 127" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"></path></svg>
 <h2 style="position: relative; margin: 0; font-family: 'Inter Tight', sans-serif; font-weight: 800; font-size: clamp(36px, 5vw, 64px); line-height: 1; letter-spacing: -0.04em">See QA AI on your calls.</h2>
