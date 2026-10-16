@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qwago QA AI | S.P. Madrid</title>
+<meta name="description" content="Every collection call audited against each bank's rules. No sampling.">
+<meta property="og:title" content="Qwago QA AI | S.P. Madrid">
+<meta property="og:description" content="Every collection call audited against each bank's rules. No sampling.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&amp;family=Geist:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#f3f1fa}
+a{color:#5536c4}a:hover{color:#3f24a0}
+.glass{background:rgba(255,255,255,0.55);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border:1px solid rgba(255,255,255,0.85);box-shadow:inset 0 1px 0 rgba(255,255,255,0.95),0 20px 60px rgba(60,40,140,0.12)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:999px;font-family:Geist,sans-serif;font-size:16px;font-weight:600;text-decoration:none;cursor:pointer}
+.float{animation:float 6s ease-in-out infinite}
+.spin{animation:spin 16s linear infinite;transform-style:preserve-3d}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+@keyframes spin{from{transform:rotateX(-10deg) rotateY(0deg)}to{transform:rotateX(-10deg) rotateY(360deg)}}
+@media (max-width:900px){.orbit{display:none}}
+.shade{animation:shade 6s ease-in-out infinite}
+@keyframes shade{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(0.8);opacity:0.55}}
+@media (prefers-reduced-motion:reduce){.float,.spin,.shade{animation:none}}
+
+.glass:not(nav){transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s}
+.glass:not(nav):hover{transform:translateY(-4px)}
+.btn{transition:transform .25s,filter .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.navl{position:relative}
+.navl::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;border-radius:2px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.navl:hover::after{transform:scaleX(1)}
+.orb{animation:drift 20s ease-in-out infinite alternate}
+.orb:nth-child(2n){animation-duration:26s;animation-direction:alternate-reverse}
+.orb:nth-child(3n){animation-duration:32s}
+@keyframes drift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(60px,-40px) scale(1.08)}100%{transform:translate(-40px,30px) scale(.96)}}
+.bob{animation:bob 6s ease-in-out infinite}
+.bob2{animation:bob 7s ease-in-out -2s infinite}
+@keyframes bob{0%,100%{translate:0 0}50%{translate:0 -10px}}
+.ping{animation:ping 1.8s ease-out infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(196,43,48,.5)}100%{box-shadow:0 0 0 14px rgba(196,43,48,0)}}
+.pulse{animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.45)}100%{box-shadow:0 0 0 28px rgba(255,255,255,0)}}
+.flow{animation:flow 1.2s linear infinite}
+@keyframes flow{to{background-position:20px 0}}
+.wv{display:block;width:3px;border-radius:2px;transform-origin:center;animation:wv 1.1s ease-in-out infinite}
+@keyframes wv{0%,100%{transform:scaleY(.45)}50%{transform:scaleY(1)}}
+.shim{position:relative;overflow:hidden}
+.shim::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);transform:translateX(-100%);animation:shim 4.5s ease-in-out infinite}
+@keyframes shim{0%,40%{transform:translateX(-100%)}80%,100%{transform:translateX(100%)}}
+.draw{stroke-dasharray:1200;stroke-dashoffset:1200;animation:draw 7s ease-in-out infinite}
+@keyframes draw{0%{stroke-dashoffset:1200}35%,85%{stroke-dashoffset:0}100%{stroke-dashoffset:-1200}}
+.tile{display:block;aspect-ratio:1;border-radius:4px;border:1.5px dashed rgba(28,24,48,.2);box-sizing:border-box}
+.tile.ok{background:#0f8a7e;border:1.5px solid #0f8a7e;animation:okp 2.6s ease-in-out infinite}
+@keyframes okp{0%,100%{transform:scale(1)}50%{transform:scale(.8)}}
+.tile.w{animation:qaf 6s ease-in-out infinite}
+@keyframes qaf{0%,6%{background:transparent;border-color:rgba(28,24,48,.2);transform:scale(1)}14%{background:#3fc9b8;border-color:#3fc9b8;transform:scale(1.18)}20%,88%{background:#0f8a7e;border-color:#0f8a7e;transform:scale(1)}100%{background:transparent;border-color:rgba(28,24,48,.2)}}
+.sweep{animation:sweep 6s linear infinite}
+@keyframes sweep{to{transform:rotate(360deg)}}
+.ag{animation:scan 6s linear infinite}
+@keyframes scan{0%{border-color:#c48ae8;transform:translate(-50%,-50%) scale(1.15)}12%,100%{border-color:#ffffff;transform:translate(-50%,-50%) scale(1)}}
+.hot{animation:hot 6s linear infinite}
+@keyframes hot{0%{box-shadow:0 0 0 0 rgba(155,52,214,.6)}25%{box-shadow:0 0 0 16px rgba(155,52,214,0)}100%{box-shadow:0 0 0 0 rgba(155,52,214,0)}}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+<style>html{scroll-behavior:smooth}img{max-width:100%}@media (max-width:700px){[style*="grid-column: span 2"]{grid-column:auto!important}}</style>
+</head>
+<body>
+<div style="position: relative; overflow: hidden; background: #f3f1fa; font-family: Geist, sans-serif; color: #1c1830">
+
+<div class="orb" aria-hidden="true" style="position: absolute; left: -10%; top: -200px; width: 720px; height: 720px; border-radius: 50%; background: #8f7be0; opacity: 0.5; filter: blur(130px)"></div>
+<div class="orb" aria-hidden="true" style="position: absolute; right: -8%; top: 300px; width: 640px; height: 640px; border-radius: 50%; background: #3fbfae; opacity: 0.35; filter: blur(140px)"></div>
+<div class="orb" aria-hidden="true" style="position: absolute; left: 30%; top: 2400px; width: 700px; height: 700px; border-radius: 50%; background: #8f7be0; opacity: 0.35; filter: blur(150px)"></div>
+<div class="orb" aria-hidden="true" style="position: absolute; right: -10%; top: 3900px; width: 600px; height: 600px; border-radius: 50%; background: #e5484d; opacity: 0.16; filter: blur(140px)"></div>
+<div class="orb" aria-hidden="true" style="position: absolute; left: -10%; top: 4900px; width: 700px; height: 700px; border-radius: 50%; background: #6d4fd8; opacity: 0.4; filter: blur(150px)"></div>
+
+<div style="position: relative; max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column">
+
+
+<nav class="glass" style="margin-top: 24px; border-radius: 999px; padding: 10px 10px 10px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<div style="display: flex; align-items: center; gap: 18px">
+<img src="assets/spmadrid.png" alt="S.P. Madrid" style="height: 28px; width: auto; display: block">
+<span aria-hidden="true" style="width: 1px; height: 24px; background: rgba(28,24,48,0.15)"></span>
+<span style="display: flex; align-items: center; gap: 8px; font-family: 'Inter Tight', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: -0.01em; color: #2a1870"><svg viewBox="33 28 92 104" width="24" height="27" aria-hidden="true"><path d="M37 31 L54 39 Q79 33 104 39 L121 31 L122 50 Q125 80 118 101 Q105 129 79 130 Q53 129 40 101 Q33 80 36 50 Z" fill="#4a2bb0"></path><circle cx="58" cy="66" r="11" fill="none" stroke="#ffffff" stroke-width="4.4"></circle><circle cx="100" cy="66" r="11" fill="none" stroke="#ffffff" stroke-width="4.4"></circle><path d="M75 75 L83 75 L79 82 Z" fill="#ffffff"></path><path d="M88 106 L88 127" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"></path></svg><span>Qwago AI</span></span>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 28px; font-size: 15px; font-weight: 500">
+<a href="#how" class="navl" style="color: #4a4560; text-decoration: none">How it works</a>
+<a href="#flags" class="navl" style="color: #4a4560; text-decoration: none">Risk flags</a>
+<a href="#banks" class="navl" style="color: #4a4560; text-decoration: none">For banks</a>
+<a href="#book" class="btn" style="background: #1c1830; color: #ffffff">Book a call</a>
+</div>
+</nav>
+
+
+<section data-hero style="position: relative; padding: 96px 0 64px; display: flex; flex-direction: column; gap: 28px">
+<div class="orbit" aria-hidden="true" style="position: absolute; right: 1%; top: 60px; width: 340px; height: 400px; display: flex; flex-direction: column; align-items: center; gap: 0">
+<canvas id="owl" width="680" height="680" style="width: 340px; height: 340px; display: block; cursor: grab; touch-action: none"></canvas>
+<span class="shade" style="width: 170px; height: 22px; border-radius: 50%; background: rgba(60,40,140,0.26); filter: blur(12px)"></span>
+</div>
+<span class="glass" style="align-self: flex-start; padding: 8px 16px; border-radius: 999px; font-size: 14px; font-weight: 600; color: #5536c4">QWAGO QA AI</span>
+<h1 style="margin: 0; font-family: 'Inter Tight', sans-serif; font-weight: 800; font-size: clamp(48px, 7vw, 96px); line-height: 0.95; letter-spacing: -0.045em; max-width: 900px">Checks every call.<br><span style="color: #0b6d64">Flags rule breaks the same day.</span></h1>
+<p style="margin: 0; font-size: 20px; line-height: 1.5; color: #4a4560; max-width: 560px">Every collection call audited against each bank's rules. No sampling.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a href="#book" class="btn" style="background: #6d4fd8; color: #ffffff; box-shadow: 0 10px 30px rgba(109,79,216,0.35)">Book a call</a>
+<a href="#video" class="btn glass" style="color: #1c1830"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14"><path d="M3 1.5v11l9-5.5z" fill="#1c1830"></path></svg>Watch the video</a>
+</div>
+</section>
+
+<div style="position: relative; padding-bottom: 120px">
+<div data-parallax style="transform-origin: center top; will-change: transform">
+<div class="glass" style="border-radius: 32px; padding: 14px">
+<img src="assets/qa-dashboard.png" alt="QA AI dashboard" style="width: 100%; height: auto; display: block; border-radius: 20px">
+</div>
+</div>
+<div class="glass bob" style="position: absolute; left: -12px; bottom: 80px; border-radius: 20px; padding: 16px 20px; display: flex; align-items: center; gap: 14px">
+<span style="width: 40px; height: 40px; border-radius: 12px; background: #0f8a7e; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"></path></svg></span>
+<span style="display: flex; flex-direction: column"><strong style="font-family: 'Inter Tight', sans-serif; font-size: 22px">61,482 of 61,482</strong><span style="font-size: 14px; color: #4a4560">calls checked</span></span>
+</div>
+<div class="glass bob2" style="position: absolute; right: -12px; top: 60px; border-radius: 20px; padding: 16px 20px; display: flex; align-items: center; gap: 14px">
+<span class="ping" style="width: 12px; height: 12px; border-radius: 50%; background: #c42b30"></span>
+<span style="display: flex; flex-direction: column"><strong style="font-size: 16px">Critical breach</strong><span style="font-size: 14px; color: #4a4560">Team leader alerted</span></span>
+</div>
+</div>
+
+
+<section style="padding: 40px 0 120px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 56px; align-items: center">
+<h2 style="margin: 0; font-family: 'Inter Tight', sans-serif; font-weight: 800; font-size: clamp(36px, 4.5vw, 60px); line-height: 1; letter-spacing: -0.035em">[130K] calls a month.<br><span style="color: #4a4560">[4] people to check them.</span></h2>
+<div class="glass" style="border-radius: 28px; padding: 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; font-weight: 600"><span>Manual sampling</span><span style="color: #c42b30; font-family: 'Inter Tight', sans-serif; font-size: 22px">[2%]</span></div>
+<div aria-hidden="true" style="display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 5px">
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile ok"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile ok"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+<span class="tile"></span>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; font-weight: 600"><span>QA AI</span><span style="color: #0b6d64; font-family: 'Inter Tight', sans-serif; font-size: 22px">100%</span></div>
+<div aria-hidden="true" style="display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 5px">
+<span class="tile w" style="animation-delay: 0.00s"></span>
+<span class="tile w" style="animation-delay: 0.05s"></span>
+<span class="tile w" style="animation-delay: 0.10s"></span>
+<span class="tile w" style="animation-delay: 0.15s"></span>
+<span class="tile w" style="animation-delay: 0.20s"></span>
+<span class="tile w" style="animation-delay: 0.25s"></span>
+<span class="tile w" style="animation-delay: 0.30s"></span>
+<span class="tile w" style="animation-delay: 0.35s"></span>
+<span class="tile w" style="animation-delay: 0.40s"></span>
+<span class="tile w" style="animation-delay: 0.45s"></span>
+<span class="tile w" style="animation-delay: 0.05s"></span>
+<span class="tile w" style="animation-delay: 0.10s"></span>
+<span class="tile w" style="animation-delay: 0.15s"></span>
+<span class="tile w" style="animation-delay: 0.20s"></span>
+<span class="tile w" style="animation-delay: 0.25s"></span>
+<span class="tile w" style="animation-delay: 0.30s"></span>
+<span class="tile w" style="animation-delay: 0.35s"></span>
+<span class="tile w" style="animation-delay: 0.40s"></span>
+<span class="tile w" style="animation-delay: 0.45s"></span>
+<span class="tile w" style="animation-delay: 0.50s"></span>
+<span class="tile w" style="animation-delay: 0.10s"></span>
+<span class="tile w" style="animation-delay: 0.15s"></span>
+<span class="tile w" style="animation-delay: 0.20s"></span>
+<span class="tile w" style="animation-delay: 0.25s"></span>
+<span class="tile w" style="animation-delay: 0.30s"></span>
+<span class="tile w" style="animation-delay: 0.35s"></span>
+<span class="tile w" style="animation-delay: 0.40s"></span>
+<span class="tile w" style="animation-delay: 0.45s"></span>
+<span class="tile w" style="animation-delay: 0.50s"></span>
+<span class="tile w" style="animation-delay: 0.55s"></span>
+<span class="tile w" style="animation-delay: 0.15s"></span>
+<span class="tile w" style="animation-delay: 0.20s"></span>
+<span class="tile w" style="animation-delay: 0.25s"></span>
+<span class="tile w" style="animation-delay: 0.30s"></span>
+<span class="tile w" style="animation-delay: 0.35s"></span>
+<span class="tile w" style="animation-delay: 0.40s"></span>
+<span class="tile w" style="animation-delay: 0.45s"></span>
+<span class="tile w" style="animation-delay: 0.50s"></span>
+<span class="tile w" style="animation-delay: 0.55s"></span>
+<span class="tile w" style="animation-delay: 0.60s"></span>
+<span class="tile w" style="animation-delay: 0.20s"></span>
+<span class="tile w" style="animation-delay: 0.25s"></span>
+<span class="tile w" style="animation-delay: 0.30s"></span>
+<span class="tile w" style="animation-delay: 0.35s"></span>
+<span class="tile w" style="animation-delay: 0.40s"></span>
+<span class="tile w" style="animation-delay: 0.45s"></span>
+<span class="tile w" style="animation-delay: 0.50s"></span>
+<span class="tile w" style="animation-delay: 0.55s"></span>
+<span class="tile w" style="animation-delay: 0.60s"></span>
+<span class="tile w" style="animation-delay: 0.65s"></span>
+<span class="tile w" style="animation-delay: 0.25s"></span>
+<span class="tile w" style="animation-delay: 0.30s"></span>
+<span class="tile w" style="animation-delay: 0.35s"></span>
+<span class="tile w" style="animation-delay: 0.40s"></span>
+<span class="tile w" style="animation-delay: 0.45s"></span>
+<span class="tile w" style="animation-delay: 0.50s"></span>
+<span class="tile w" style="animation-delay: 0.55s"></span>
+<span class="tile w" style="animation-delay: 0.60s"></span>
+<span class="tile w" style="animation-delay: 0.65s"></span>
+<span class="tile w" style="animation-delay: 0.70s"></span>
+<span class="tile w" style="animation-delay: 0.30s"></span>
+<span class="tile w" style="animation-delay: 0.35s"></span>
+<span class="tile w" style="animation-delay: 0.40s"></span>
+<span class="tile w" style="animation-delay: 0.45s"></span>
+<span class="tile w" style="animation-delay: 0.50s"></span>
+<span class="tile w" style="animation-delay: 0.55s"></span>
+<span class="tile w" style="animation-delay: 0.60s"></span>
+<span class="tile w" style="animation-delay: 0.65s"></span>
+<span class="tile w" style="animation-delay: 0.70s"></span>
+<span class="tile w" style="animation-delay: 0.75s"></span>
+<span class="tile w" style="animation-delay: 0.35s"></span>
+<span class="tile w" style="animation-delay: 0.40s"></span>
+<span class="tile w" style="animation-delay: 0.45s"></span>
+<span class="tile w" style="animation-delay: 0.50s"></span>
+<span class="tile w" style="animation-delay: 0.55s"></span>
+<span class="tile w" style="animation-delay: 0.60s"></span>
+<span class="tile w" style="animation-delay: 0.65s"></span>
+<span class="tile w" style="animation-delay: 0.70s"></span>
+<span class="tile w" style="animation-delay: 0.75s"></span>
+<span class="tile w" style="animation-delay: 0.80s"></span>
+<span class="tile w" style="animation-delay: 0.40s"></span>
+<span class="tile w" style="animation-delay: 0.45s"></span>
+<span class="tile w" style="animation-delay: 0.50s"></span>
+<span class="tile w" style="animation-delay: 0.55s"></span>
+<span class="tile w" style="animation-delay: 0.60s"></span>
+<span class="tile w" style="animation-delay: 0.65s"></span>
+<span class="tile w" style="animation-delay: 0.70s"></span>
+<span class="tile w" style="animation-delay: 0.75s"></span>
+<span class="tile w" style="animation-delay: 0.80s"></span>
+<span class="tile w" style="animation-delay: 0.85s"></span>
+<span class="tile w" style="animation-delay: 0.45s"></span>
+<span class="tile w" style="animation-delay: 0.50s"></span>
+<span class="tile w" style="animation-delay: 0.55s"></span>
+<span class="tile w" style="animation-delay: 0.60s"></span>
+<span class="tile w" style="animation-delay: 0.65s"></span>
+<span class="tile w" style="animation-delay: 0.70s"></span>
+<span class="tile w" style="animation-delay: 0.75s"></span>
+<span class="tile w" style="animation-delay: 0.80s"></span>
+<span class="tile w" style="animation-delay: 0.85s"></span>
+<span class="tile w" style="animation-delay: 0.90s"></span>
+</div>
+</div>
+</div>
+</section>
+
+
+<section id="video" style="padding-bottom: 140px">
+<div class="glass" style="border-radius: 36px; padding: 14px">
+<div style="position: relative; aspect-ratio: 16 / 9; border-radius: 26px; overflow: hidden; background: #1c1830; display: flex; align-items: center; justify-content: center">
+<div class="orb" aria-hidden="true" style="position: absolute; left: 10%; top: 10%; width: 50%; height: 70%; border-radius: 50%; background: #6d4fd8; opacity: 0.5; filter: blur(90px)"></div>
+<div class="orb" aria-hidden="true" style="position: absolute; right: 5%; bottom: 0; width: 40%; height: 60%; border-radius: 50%; background: #0f8a7e; opacity: 0.45; filter: blur(90px)"></div>
+<button type="button" class="pulse" aria-label="Play QA AI video" style="position: relative; width: 96px; height: 96px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.5); background: rgba(255,255,255,0.18); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="30" height="30" viewBox="0 0 14 14"><path d="M4 1.5v11l9-5.5z" fill="#ffffff"></path></svg></button>
+<span style="position: absolute; left: 32px; bottom: 28px; color: rgba(255,255,255,0.85); font-size: 15px; font-weight: 500">[QA AI product video]</span>
+</div>
+</div>
+</section>
+
+
+<section id="how" style="padding-bottom: 140px; display: flex; flex-direction: column; gap: 48px">
+<h2 style="margin: 0; font-family: 'Inter Tight', sans-serif; font-weight: 800; font-size: clamp(36px, 4.5vw, 56px); letter-spacing: -0.035em; text-align: center">How it works</h2>
+<div style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px">
+<div aria-hidden="true" style="position: absolute; left: 8%; right: 8%; top: 52px; height: 2px; background: repeating-linear-gradient(90deg, #6d4fd8 0 10px, transparent 10px 20px); opacity: 0.4" class="flow"></div>
+<div class="glass" style="position: relative; border-radius: 28px; padding: 28px; display: flex; flex-direction: column; gap: 20px">
+<span style="width: 48px; height: 48px; border-radius: 16px; background: #ffffff; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(60,40,140,0.12)"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6d4fd8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"></path></svg></span>
+<strong style="font-family: 'Inter Tight', sans-serif; font-size: 24px">Call ends</strong>
+<span style="color: #4a4560; line-height: 1.45">Pulled from the dialer automatically.</span>
+</div>
+<div class="glass" style="position: relative; border-radius: 28px; padding: 28px; display: flex; flex-direction: column; gap: 20px">
+<span style="width: 48px; height: 48px; border-radius: 16px; background: #ffffff; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(60,40,140,0.12)"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6d4fd8" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 11h16M4 16h10"></path></svg></span>
+<strong style="font-family: 'Inter Tight', sans-serif; font-size: 24px">Transcribed</strong>
+<span style="color: #4a4560; line-height: 1.45">Every word, both sides.</span>
+</div>
+<div class="glass" style="position: relative; border-radius: 28px; padding: 28px; display: flex; flex-direction: column; gap: 20px">
+<span style="width: 48px; height: 48px; border-radius: 16px; background: #ffffff; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(60,40,140,0.12)"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6d4fd8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"></path><path d="M20 12v6a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h9"></path></svg></span>
+<strong style="font-family: 'Inter Tight', sans-serif; font-size: 24px">Checked</strong>
+<span style="color: #4a4560; line-height: 1.45">Against the bank's rules, outcome tagged.</span>
+</div>
+<div class="glass" style="position: relative; border-radius: 28px; padding: 28px; display: flex; flex-direction: column; gap: 20px">
+<span style="width: 48px; height: 48px; border-radius: 16px; background: #ffffff; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(60,40,140,0.12)"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c42b30" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4h11l-2 4 2 4H5"></path></svg></span>
+<strong style="font-family: 'Inter Tight', sans-serif; font-size: 24px">Flagged</strong>
+<span style="color: #4a4560; line-height: 1.45">Rule breaks ranked, serious ones sent same day.</span>
+</div>
+</div>
+</section>
+
+
+<section id="flags" style="padding-bottom: 140px; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 56px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-family: 'Inter Tight', sans-serif; font-weight: 800; font-size: clamp(36px, 4.5vw, 56px); line-height: 1; letter-spacing: -0.035em">Most serious first.</h2>
+<p style="margin: 0; font-size: 19px; line-height: 1.5; color: #4a4560; max-width: 420px">Shows the exact sentence that broke the rule.</p>
+</div>
+<div style="position: relative; height: 420px">
+<div class="glass" style="position: absolute; left: 48px; right: 0; top: 0; border-radius: 24px; padding: 22px 26px; display: flex; flex-direction: column; gap: 10px; opacity: 0.75">
+<div style="display: flex; justify-content: space-between; align-items: center"><span style="padding: 5px 12px; border-radius: 999px; background: rgba(28,24,48,0.08); font-size: 13px; font-weight: 600; color: #4a4560">Minor</span><span style="font-size: 14px; color: #4a4560">Tracked as a trend</span></div>
+<strong style="font-size: 18px">[Missed negotiation step]</strong>
+</div>
+<div class="glass" style="position: absolute; left: 24px; right: 24px; top: 110px; border-radius: 24px; padding: 22px 26px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: center"><span style="padding: 5px 12px; border-radius: 999px; background: rgba(214,120,20,0.14); font-size: 13px; font-weight: 600; color: #9a4f00">Major</span><span style="font-size: 14px; color: #4a4560">Sent to coaching</span></div>
+<strong style="font-size: 18px">Protocol breach</strong>
+</div>
+<div class="glass" style="position: absolute; left: 0; right: 48px; top: 220px; border-radius: 24px; padding: 24px 28px; display: flex; flex-direction: column; gap: 14px; background: rgba(255,255,255,0.8)">
+<div style="display: flex; justify-content: space-between; align-items: center"><span class="ping" style="padding: 5px 12px; border-radius: 999px; background: #c42b30; font-size: 13px; font-weight: 600; color: #ffffff">Critical</span><span style="font-size: 14px; color: #4a4560">Same-day alert</span></div>
+<strong style="font-size: 20px">Swearing at a customer</strong>
+<p style="margin: 0; padding: 14px 16px; border-radius: 14px; background: rgba(28,24,48,0.05); font-size: 15px; line-height: 1.5; color: #4a4560">Agent, 02:14: "[transcript line] <mark style="background: rgba(196,43,48,0.18); color: #8f1d21; padding: 0 4px; border-radius: 4px">[flagged words]</mark> [transcript line]"</p>
+</div>
+</div>
+</section>
+
+
+<section style="padding-bottom: 140px; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 56px; align-items: center">
+<div class="glass" style="border-radius: 32px; padding: 14px; order: 1">
+<img src="assets/qa-team-leader.png" alt="QA AI team leader screen" style="width: 100%; height: auto; display: block; border-radius: 20px">
+</div>
+<div style="display: flex; flex-direction: column; gap: 28px; order: 2">
+<h2 style="margin: 0; font-family: 'Inter Tight', sans-serif; font-weight: 800; font-size: clamp(36px, 4.5vw, 56px); line-height: 1; letter-spacing: -0.035em">Built for team leaders.</h2>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div class="glass" style="border-radius: 20px; padding: 18px 22px; display: flex; align-items: center; gap: 16px"><span style="width: 10px; height: 10px; border-radius: 50%; background: #0f8a7e"></span><strong style="font-size: 18px">Who is hitting target</strong></div>
+<div class="glass" style="border-radius: 20px; padding: 18px 22px; display: flex; align-items: center; gap: 16px"><span style="width: 10px; height: 10px; border-radius: 50%; background: #d67814"></span><strong style="font-size: 18px">Who needs coaching</strong></div>
+<div class="glass" style="border-radius: 20px; padding: 18px 22px; display: flex; align-items: center; gap: 16px"><span style="width: 10px; height: 10px; border-radius: 50%; background: #6d4fd8"></span><strong style="font-size: 18px">Customers ready to pay, not yet promised</strong></div>
+</div>
+</div>
+</section>
+
+
+<section style="padding-bottom: 140px">
+<div class="glass" style="border-radius: 36px; padding: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 6px"><strong style="font-family: 'Inter Tight', sans-serif; font-size: 56px; letter-spacing: -0.04em; color: #5536c4" data-count="100" data-suffix="%">100%</strong><span style="color: #4a4560">of calls checked</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><strong style="font-family: 'Inter Tight', sans-serif; font-size: 56px; letter-spacing: -0.04em">[130K]</strong><span style="color: #4a4560">calls a month</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><strong style="font-family: 'Inter Tight', sans-serif; font-size: 56px; letter-spacing: -0.04em">[16]</strong><span style="color: #4a4560">management centers</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><strong style="font-family: 'Inter Tight', sans-serif; font-size: 56px; letter-spacing: -0.04em">[1,500]</strong><span style="color: #4a4560">agents covered</span></div>
+</div>
+</section>
+
+
+<section id="banks" style="padding-bottom: 140px; display: flex; flex-direction: column; gap: 40px">
+<h2 style="margin: 0; font-family: 'Inter Tight', sans-serif; font-weight: 800; font-size: clamp(36px, 4.5vw, 56px); letter-spacing: -0.035em">Built for banks.</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
+<div class="glass" style="border-radius: 28px; padding: 32px; display: flex; flex-direction: column; gap: 14px; min-height: 200px"><svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#5536c4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 018 0v3"></path></svg><strong style="font-family: 'Inter Tight', sans-serif; font-size: 24px">Processed in-house</strong><span style="color: #4a4560; line-height: 1.45">Calls stay on S.P. Madrid's own systems.</span></div>
+<div class="glass" style="border-radius: 28px; padding: 32px; display: flex; flex-direction: column; gap: 14px; min-height: 200px"><svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#5536c4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16M4 12h16M4 19h10"></path></svg><strong style="font-family: 'Inter Tight', sans-serif; font-size: 24px">Your rules, per campaign</strong><span style="color: #4a4560; line-height: 1.45">Each bank's requirements set up as checks.</span></div>
+<div class="glass" style="border-radius: 28px; padding: 32px; display: flex; flex-direction: column; gap: 14px; min-height: 200px"><svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#5536c4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path></svg><strong style="font-family: 'Inter Tight', sans-serif; font-size: 24px">Penalties avoided</strong><span style="color: #4a4560; line-height: 1.45">Incidents caught before they cost you.</span></div>
+</div>
+</section>
+
+
+<section id="book" style="padding-bottom: 80px">
+<div class="glass" style="position: relative; overflow: hidden; border-radius: 40px; padding: 96px 32px; display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center; background: rgba(255,255,255,0.4)">
+<div class="orb" aria-hidden="true" style="position: absolute; left: 15%; top: -40%; width: 60%; height: 120%; border-radius: 50%; background: #6d4fd8; opacity: 0.35; filter: blur(100px)"></div>
+<svg viewBox="33 28 92 104" width="60" height="68" aria-hidden="true" style="position: relative"><path d="M37 31 L54 39 Q79 33 104 39 L121 31 L122 50 Q125 80 118 101 Q105 129 79 130 Q53 129 40 101 Q33 80 36 50 Z" fill="#4a2bb0"></path><circle cx="58" cy="66" r="11" fill="none" stroke="#ffffff" stroke-width="4.4"></circle><circle cx="100" cy="66" r="11" fill="none" stroke="#ffffff" stroke-width="4.4"></circle><path d="M75 75 L83 75 L79 82 Z" fill="#ffffff"></path><path d="M88 106 L88 127" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"></path></svg>
+<h2 style="position: relative; margin: 0; font-family: 'Inter Tight', sans-serif; font-weight: 800; font-size: clamp(36px, 5vw, 64px); line-height: 1; letter-spacing: -0.04em">See QA AI on your calls.</h2>
+<p style="position: relative; margin: 0; font-size: 19px; color: #4a4560">Book a call with the S.P. Madrid team.</p>
+<a href="#book" class="btn" style="position: relative; background: #6d4fd8; color: #ffffff; min-height: 56px; padding: 0 32px; font-size: 17px; box-shadow: 0 12px 34px rgba(109,79,216,0.4)">Book a call</a>
+</div>
+</section>
+
+
+<footer style="padding: 32px 0 48px; border-top: 1px solid rgba(28,24,48,0.1); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; font-size: 15px; color: #4a4560">
+<img src="assets/spmadrid.png" alt="S.P. Madrid" style="height: 24px; width: auto">
+<div style="display: flex; gap: 24px"><a href="https://qwago-coaching-ai.vercel.app">Coaching AI</a><a href="https://spmadrid.com">spmadrid.com</a></div>
+</footer>
+
+</div>
+</div>
+<script src="assets/three.min.js"></script>
+<script src="assets/owl.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>
